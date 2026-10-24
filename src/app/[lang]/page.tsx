@@ -94,24 +94,40 @@ export default async function HomePage({
 
       {/* 1. HERO FULL BANNER SECTION - Panoramic Family Protection Banner with Signature SBI Plum Theme */}
       <section className="relative overflow-hidden bg-[#240B29] text-white">
-        {/* Full-bleed Panoramic Banner Image - Family visible on the right */}
-        <div className="absolute inset-0 z-0">
+        {/* DESKTOP HERO BANNER: Full-bleed panoramic banner image - Family visible on the right (Desktop only) */}
+        <div className="hidden lg:block absolute inset-0 z-0">
           <Image
             src="/images/home-full-banner.jpg"
             alt="Protected Indian family smiling happily in their home with financial security"
             fill
             priority
             quality={95}
-            className="object-cover object-[80%_center] sm:object-[82%_center] md:object-[84%_center] lg:object-[86%_center]"
+            className="object-cover object-[86%_center]"
             sizes="100vw"
           />
-          {/* Authentic Plum/Wine Brand Gradient Scrim - Dark on left for text readability, 100% transparent on right for family visibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#200A25]/95 via-[#2A0E30]/85 via-45% to-transparent pointer-events-none md:via-[#2A0E30]/92 md:to-75%" />
+          {/* Authentic Plum/Wine Brand Gradient Scrim - Dark on left for text readability, transparent on right for family */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#200A25]/95 via-[#2A0E30]/90 via-45% to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1F0724]/90 via-transparent to-black/20 pointer-events-none" />
         </div>
 
-        {/* Banner Content Container - Kept on left so people on right remain completely visible */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-20 lg:py-28 min-h-[480px] sm:min-h-[580px] lg:min-h-[640px] flex flex-col justify-center">
+        {/* MOBILE HERO BANNER: Persons prominently shown at top in clear, full view (Mobile/Tablet only) */}
+        <div className="block lg:hidden relative w-full aspect-[4/3] sm:aspect-[16/10] overflow-hidden z-0">
+          <Image
+            src="/images/home-family-mobile.jpg"
+            alt="Protected Indian family smiling happily in their home with financial security"
+            fill
+            priority
+            quality={95}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          {/* Soft gradient blend at bottom to transition smoothly into the plum content section below */}
+          <div className="absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-[#240B29] to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent pointer-events-none" />
+        </div>
+
+        {/* Banner Content Container - Underneath banner image on mobile, positioned on left over banner on desktop */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-8 sm:py-16 lg:py-28 min-h-0 lg:min-h-[640px] flex flex-col justify-center">
           <div className="max-w-xl lg:max-w-2xl space-y-4 sm:space-y-6">
             {/* Verified Badge with Slide-Right Animation */}
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/15 text-white text-[11px] sm:text-xs font-semibold backdrop-blur-md border border-white/25 shadow-sm animate-slide-right">
