@@ -28,12 +28,10 @@ export function Header({ locale }: HeaderProps) {
 
   const navLinks = [
     { href: `/${locale}/about`, label: t.nav.about },
-    { href: `/${locale}/life-insurance`, label: t.nav.lifeInsurance },
-    { href: `/${locale}/life-insurance#plans`, label: t.nav.plans },
+    { href: `/${locale}/life-insurance`, label: t.nav.plans },
     { href: `/${locale}/life-insurance/term-insurance`, label: t.nav.termInsurance },
     { href: `/${locale}/guides`, label: t.nav.guides },
     { href: `/${locale}/life-insurance/faqs`, label: t.nav.faqs },
-    { href: `/${locale}/visiting-card`, label: t.nav.visitingCard },
     { href: `/${locale}/contact`, label: t.nav.contact },
   ];
 
@@ -84,13 +82,13 @@ export function Header({ locale }: HeaderProps) {
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-15 sm:h-20 gap-2 sm:gap-4">
-          {/* Logo / Brand Identity with Official SBI Life Mark */}
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-3 lg:gap-6">
+          {/* Logo / Brand Identity with Official SBI Life Mark - ALWAYS FULLY VISIBLE, NEVER TRUNCATED */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink focus:outline-none"
+            className="flex items-center gap-2.5 sm:gap-3 group shrink-0 focus:outline-none"
           >
-            <div className="relative h-7 w-20 sm:h-10 sm:w-28 shrink-0">
+            <div className="relative h-7 w-20 sm:h-9 sm:w-26 md:h-10 md:w-28 shrink-0">
               <Image
                 src="/images/lifemitra/SBILifeLogo.png"
                 alt="SBI Life Insurance"
@@ -101,27 +99,28 @@ export function Header({ locale }: HeaderProps) {
               />
             </div>
             <div className="h-6 sm:h-8 w-px bg-slate-200 shrink-0" />
-            <div className="flex flex-col min-w-0">
-              <span className="text-sm sm:text-lg md:text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#53205A] transition-colors font-display leading-tight truncate">
+            <div className="flex flex-col shrink-0">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold tracking-tight text-slate-900 group-hover:text-[#53205A] transition-colors font-display leading-tight whitespace-nowrap">
                 {siteConfig.fullName}
               </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold text-[#53205A] tracking-wide flex items-center gap-1 truncate">
+              <span className="text-[10px] sm:text-[11px] font-semibold text-[#53205A] tracking-wide flex items-center gap-1 whitespace-nowrap">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                <span className="sm:hidden">Life Mitra</span>
-                <span className="hidden sm:inline">{t.common.advisorRole}</span>
+                <span>Life Mitra</span>
+                <span className="hidden lg:inline text-slate-400">•</span>
+                <span className="hidden lg:inline text-slate-600 font-medium">SBI Life Advisor</span>
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-1">
+          {/* Desktop Navigation Links - Clean, Short & Spacious */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-2.5 py-1.5 rounded-md text-xs sm:text-[13px] font-medium whitespace-nowrap transition-colors ${
+                  className={`px-2.5 xl:px-3 py-1.5 rounded-md text-xs lg:text-[13px] font-medium whitespace-nowrap transition-colors ${
                     active
                       ? "text-[#53205A] bg-purple-50 font-bold"
                       : "text-slate-700 hover:text-[#53205A] hover:bg-slate-50"
@@ -134,20 +133,20 @@ export function Header({ locale }: HeaderProps) {
           </nav>
 
           {/* Right Action Controls: Language Switcher + Golden Button */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-2.5 lg:gap-3 shrink-0">
             <LanguageSwitcher currentLocale={locale} />
 
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold bg-[#FFBA00] hover:bg-[#F5A800] text-slate-950 shadow-sm hover:shadow transition-all whitespace-nowrap active:scale-95"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 lg:px-4 lg:py-2.5 rounded-lg text-xs lg:text-sm font-bold bg-[#FFBA00] hover:bg-[#F5A800] text-slate-950 shadow-sm hover:shadow transition-all whitespace-nowrap active:scale-95"
             >
               <span>{t.common.getQuote}</span>
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
             </Link>
           </div>
 
           {/* Mobile Right Controls: Compact Language Switcher + Hamburger */}
-          <div className="flex xl:hidden items-center gap-1.5 sm:gap-2 shrink-0">
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2 shrink-0">
             <LanguageSwitcher currentLocale={locale} />
             <button
               type="button"
@@ -164,7 +163,7 @@ export function Header({ locale }: HeaderProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
+        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-150">
           <nav className="flex flex-col space-y-1">
             <Link
               href={`/${locale}`}

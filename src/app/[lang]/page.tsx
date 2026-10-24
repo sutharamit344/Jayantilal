@@ -258,11 +258,12 @@ export default async function HomePage({
                 <div className="relative group">
                   <div className="relative w-72 h-80 sm:w-84 sm:h-96 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-200">
                     <Image
-                      src="/images/advisor.jpg"
+                      src="/images/jayantilal-suthar-portrait.jpg"
                       alt="Jayanti Lal Suthar - Life Mitra with SBI Life Insurance"
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 768px) 288px, 336px"
+                      priority
                     />
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-5 text-white text-center">
                       <span className="text-sm font-bold text-[#FFBA00] block">{siteConfig.fullName}</span>

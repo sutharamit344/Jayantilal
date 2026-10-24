@@ -20,11 +20,11 @@ export const gu = {
   nav: {
     home: "મુખ્ય પૃષ્ઠ",
     about: "પરિચય",
-    lifeInsurance: "જીવન વીમો",
+    lifeInsurance: "યોજનાઓ",
     plans: "યોજનાઓ",
     termInsurance: "ટર્મ પ્લાન",
     guides: "માર્ગદર્શિકા",
-    faqs: "પ્રશ્નોત્તરી",
+    faqs: "FAQs",
     visitingCard: "વિઝિટિંગ કાર્ડ",
     contact: "સંપર્ક",
   },

@@ -103,11 +103,12 @@ export default async function AboutPage({
                 <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                   <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shrink-0 border-2 border-slate-200 shadow-inner">
                     <Image
-                      src="/images/advisor.jpg"
-                      alt="Jayanti Lal Suthar"
+                      src="/images/jayantilal-suthar-portrait.jpg"
+                      alt="Jayanti Lal Suthar - Life Mitra"
                       fill
                       className="object-cover object-top"
                       sizes="176px"
+                      priority
                     />
                   </div>
                   <div className="space-y-3 text-center sm:text-left flex-1">

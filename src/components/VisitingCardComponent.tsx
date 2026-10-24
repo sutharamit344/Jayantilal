@@ -126,10 +126,10 @@ export function VisitingCardComponent() {
                 {/* Advisor Photo */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-slate-100 border-2 border-slate-200 shadow-inner shrink-0 relative overflow-hidden">
                   <Image
-                    src="/images/advisor.jpg"
+                    src="/images/jayantilal-suthar-headshot.jpg"
                     alt={siteConfig.fullName}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                     sizes="96px"
                   />
                 </div>
